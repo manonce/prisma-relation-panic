@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model A {
+  id         Int          @id @default(autoincrement())
+  custom_id  String
+  B          B[]
+
+  @@index([custom_id], name: "custom_id")
+}
+
+model B {
+  id        Int     @id @default(autoincrement())
+  custom_id String
+  A         A @relation(fields: [custom_id], references: [custom_id])
+}

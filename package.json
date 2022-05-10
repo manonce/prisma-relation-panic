@@ -1,0 +1,20 @@
+{
+  "name": "prisma-relation-panic",
+  "version": "1.0.0",
+  "license": "ISC",
+  "scripts": {
+    "init": "npx prisma db push",
+    "seed:fail": "ts-node prisma/fail.ts",
+    "seed:succeed": "ts-node prisma/succeed.ts",
+    "start": "ts-node index.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "3.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "16.11.26",
+    "prisma": "3.11.0",
+    "ts-node": "10.5.0",
+    "typescript": "4.6.2"
+  }
+}
