@@ -19,7 +19,7 @@ async function main() {
 
     await prisma.b.create({
         data: {
-            custom_id: "1"
+            a_id: "1"
         }
     });
 }
