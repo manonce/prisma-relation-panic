@@ -31,21 +31,3 @@ To test data-driven resolution:
 
 1. `npm run seed:succeed`
 2. `npm run start`
-
-Notes:
-
-1. After Prisma version 3.11 `npx prisma db seed` will throw an opaque error when the schema includes references to non-unique values:
-
-```bash
-An error occured while running the seed command:
-Error: Command was killed with SIGKILL (Forced termination): ts-node prisma/seed.ts
-```
-
-2. The SQLite connector catches this error on `npx prisma db push`:
-
-```bash
-Error: P1012
-
-error: Error validating: The argument `references` must refer to a unique criteria in the related model `A`. But it is referencing the following fields that are not a unique criteria: custom_id
-  -->  schema.prisma:21
-```
